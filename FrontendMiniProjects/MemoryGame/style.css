@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*,
+*::before,
+*::after{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: "Poppins", sans-serif;
+}
+
+:root{
+     --dark-blue-clr: #01243f;
+     --light-grey-clr: #bacdd8;
+     --light-grey-clr-hover: #6293b7;
+     --orange-clr: #fda517;
+}
+
+html{
+     /* font-size: 62.5%; */
+     overflow-x: hidden;
+     font-family: sans-serif;
+}
+
+body{
+     position: relative;
+     min-width: 100vw;
+     min-height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: var(--dark-blue-clr);
+}
+
+.container{
+     /* position: relative;  */
+}
+
+.container.active::before{
+     content: '';
+     position: fixed;
+     width: 100%;
+     min-height: 100vh;
+     z-index: 99;
+     background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.modal-container{
+     min-width: 440px;
+     background-color: #fff;
+     padding: 1.3rem 2rem;
+     border-radius: 0.6rem;
+}
+
+.modal-container .modal{
+     display: flex;
+     flex-direction: column;
+     gap: 1.8rem;
+}
+
+.main-heading{
+     text-align-last: center;
+     font-size: 3rem;
+     color: #fff;
+     margin-bottom: 2.3rem;
+}
+
+.btn{
+     display: block;
+     width: 100%;
+     padding: 0.4rem ;
+     text-align: center;
+     font-size: 1.3rem;
+     font-weight: 800;
+     background-color: var(--light-grey-clr);
+     border-radius: 1.4rem;
+     color: #fff;
+     cursor: pointer;
+     transition: 0.2s ease-in;
+}
+
+.btn.btn-blue:hover{
+     background-color: var(--light-grey-clr-hover);
+}
+
+.btn.btn-blue:is(:active), .btn.btn-blue.active{
+     background-color: var(--dark-blue-clr);
+}
+
+.btn.btn-orange{
+     background-color: var(--orange-clr);
+}
+
+.btn.btn-orange:hover{
+     opacity: 0.7;
+}
+
+.modal-container .modal .box .wrapper{
+     display: flex;
+     gap: 1.1rem;
+     justify-content: space-between;
+}     
+
+.modal-container .modal .box > h3{
+     margin-bottom: 0.5rem;
+}
+
+.gameScreen{
+     width: 100vw;
+     padding: 0 2rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     gap: 1.8rem;
+     margin-bottom: 3rem;
+}
+
+.gameScreen .topBar{
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.gameScreen .topBar .btnsBx{
+     display: flex;
+     gap: 1.2rem;
+}
+
+.gameScreen .topBar .btnsBx .btn{
+     white-space: nowrap;
+     padding: 0.3rem 1.62rem;
+}
+
+.gameScreen .gridBox{
+     display: flex;
+     flex-direction:  column;
+     gap: 1.1rem;
+}
+
+.gameScreen .gridBox .gridDiv {
+     display: flex;
+     gap: 1.1rem;
+}
+
+.gameScreen .gridBox .gridDiv .grid-item{
+     width: 80px;
+     height: 80px;
+     border-radius: 50%;
+     line-height: 90px;
+     text-align: center;
+     font-size: 2.2rem;
+     font-weight: 700;
+     color: #fff;
+     cursor: pointer;
+     background-color: var(--dark-blue-clr);
+}
+
+.gameScreen .gridBox .gridDiv .grid-item.active{
+     background-color: var(--orange-clr);
+}
+
+.gameScreen .gridBox .gridDiv .grid-item:hover{
+     background-color: var(--light-grey-clr-hover);
+}
+
+.gameScreen .gridBox .gridDiv .grid-item.matched{
+     background-color: var(--light-grey-clr);
+     pointer-events: none;
+}
+
+.gameScreen .bottomBar{
+     width: 100%;
+     display: flex;
+     gap: 1.3rem;
+     flex-direction: column;
+     /* flex-wrap: wrap; */
+}
+
+
+.gameScreen .bottomBar .box{
+     width: 100%;
+     flex: 0 0 50%;
+     /* height: 80px; */
+     background-color: #dfe7ec;
+     padding: 1rem 2rem;
+     border-radius: 1rem;
+     text-align: center;
+     
+}
+
+.bigNumber {
+     font-weight: bold;
+     font-size: 2rem;
+}
+.gameScreen .bottomBar .movesBx .moves {
+     font-weight: bold;
+     font-size: 2rem;
+}
+
+.gameScreen .bottomBar .playerIndicationBx{
+     /* display: flex; */
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     /* flex-wrap: wrap; */
+     width: 100%;
+}
+
+.gameScreen .bottomBar .playerIndicationBx .moves-div{
+     position: relative;
+     display: flex;
+     width: 100%;
+     justify-content: space-between;
+     align-items: center;
+     padding: 0.54rem 1rem;
+     border-radius: 0.5rem;
+     background-color: var(--light-grey-clr);
+     margin-bottom: 1rem;
+}
+
+.gameScreen .bottomBar .playerIndicationBx .moves-div.active{
+     border: 3px solid var(--dark-blue-clr);
+}
+
+.gameScreen .bottomBar .playerIndicationBx .moves-div.active::before{
+     content: '';
+     position: absolute;
+     width: 30px;     
+     height: 30px;
+     top: 0%;
+     left: 50%;
+     transform: translate(-50%, -57%) rotate(45deg);
+     background-color: var(--orange-clr);
+     border-top: 3px solid var(--dark-blue-clr);
+     border-left: 3px solid var(--dark-blue-clr);
+     /* z-index: -1;      */
+}
+
+.gameScreen .bottomBar .playerIndicationBx .moves-div.active::after{
+     content: 'current turn';
+     position: absolute;
+     text-transform: uppercase;
+     bottom: -1.6rem;
+     font-size: 0.8rem;
+     font-weight: 600;
+     left: 50%;
+     transform: translateX(-50%);
+     color: var(--dark-blue-clr);
+}
+
+.gameScreen .bottomBar .playerIndicationBx .moves-div > .wrapper{
+     display: flex;
+     gap: 0.6rem;
+}
+
+.gameScreen .bottomBar .playerIndicationBx .moves-div > .wrapper > div{
+     text-align: center;
+}
+
+.gameScreen .bottomBar .playerIndicationBx .moves-div .wrapper span{
+     font-size: 0.8rem;
+}
+
+.gameScreen .bottomBar .playerIndicationBx .moves-div .player-text{
+     font-weight: bold;
+     font-size: 1.3rem;
+     color: var(--dark-blue-clr);
+}
+
+
+.gameScreen .bottomBar > div{
+     display: flex;
+     gap: 1.2rem;
+}
+
+.resultModal{
+     min-width: 440px;
+     position: absolute;
+     top: 50%; 
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background-color: #fff;
+     padding: 1.3rem 2rem;
+     border-radius: 0.6rem;
+     display: flex;
+     flex-direction: column;
+     gap: 1.2rem;
+     /* border: 3px solid var(--dark-blue-clr); */
+     display: none;
+     z-index: 99999;
+
+}
+
+.resultModal .topBar .main-heading{
+     color: var(--dark-blue-clr);
+     margin-bottom: 0;
+     font-size: 1.7rem;
+}
+
+.resultModal .topBar > span{
+     display: block;
+     text-align: center;
+     font-weight: 700;
+     color: var(--light-grey-clr-hover);
+}
+
+.resultModal .middleBar {
+     /* background-color: red; */
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+}
+
+.resultModal .middleBar .box {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: var(--light-grey-clr);
+     padding: 0.9rem 1.4rem;
+     border-radius: 0.5rem;
+}
+
+.resultModal .bottomBar .btnsBx{
+     display: flex;
+     gap: 1rem;
+}
+
+.resultModal .bottomBar .btnsBx > span{
+     font-size: 1rem;
+}
+
+/* 
+@media(max-width: 490px){
+     html{
+          font-size: 70%;
+     } */
+/* } */
+
+
