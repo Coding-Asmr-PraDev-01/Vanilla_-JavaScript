@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Memory Game using Vanilla JavaScript</title>
+     <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+     <div class="container">
+          <h1 class="main-heading">Memory Game</h1>
+
+          <div class="modal-container">
+               <div class="modal">
+                    <div class="box">
+                         <h3>Select Theme</h3>
+                         <div class="wrapper">
+                              <span class="btn btn-blue active" data-theme="numbers">Numbers</span>
+                              <span class="btn btn-blue" data-theme="icons">Icons</span>
+                         </div>
+                    </div>
+                    <div class="box">
+                         <h3>Number of Players</h3>
+                         <div class="wrapper">
+                              <span class="btn btn-blue active">1</span>
+                              <span class="btn btn-blue">2</span>
+                              <span class="btn btn-blue">3</span>
+                              <span class="btn btn-blue">4</span>
+                         </div>
+                    </div>
+                    <div class="box">
+                         <h3>Grid Size</h3>
+                         <div class="wrapper">
+                              <span class="btn btn-blue active">4x4</span>
+                              <span class="btn btn-blue">6x6</span>
+                         </div>
+                    </div>
+                    <span class="btn btn-orange" data-btn="start-game">Start Game</span>
+               </div>
+          </div>
+
+          <div class="gameScreen">
+               <div class="topBar">
+                    <h4>Memoriod</h4>
+                    <div class="btnsBx">
+                         <span class="btn btn-orange" data-btn="restart-game">Restart</span>
+                         <span class="btn btn-blue" data-btn="new-game">New Game</span>
+                    </div>
+               </div>
+
+               <div class="gridBox">
+
+               </div>
+
+               <div class="bottomBar">
+                    <div class="moves-div playerOne">
+                         <div class="timerBx box">
+                              <span class="heading">Time</span>
+                              <div class="time bigNumber">
+                                   <span class="minutes">0</span>
+                                   <span>:</span>
+                                   <span class="seconds">32</span>
+                              </div>
+                         </div>
+                         <div class="movesBx box">
+                              <span class="heading">Moves</span>
+                              <br>
+                              <span class="moves bigNumber">0</span>
+                         </div>
+                    </div>
+                    
+                    <div class="playerIndicationBx">
+
+                    </div>
+               </div>
+          </div>
+
+          <div class="resultModal">
+               <div class="topBar">
+                    <h1 class="main-heading">
+                         Player 2 Wins!
+                    </h1>
+                    <span>Game over! Here are results...</span>
+               </div>
+               <div class="middleBar">
+                    <!-- <div class="box">
+                         <div class="leftBx">
+                              <h3>Player 2 (Winner!)</h3>
+                         </div>
+                         <div class="rightBx">
+                              <h2>5 Pairs</h2>
+                         </div>
+                    </div>
+                    <div class="box">
+                         <div class="leftBx">
+                              <h3>Player 1</h3>
+                         </div>
+                         <div class="rightBx">
+                              <h2>3 Pairs</h2>
+                         </div> -->
+                    </div>
+                    <div class="bottomBar">
+                         <div class="btnsBx">
+                              <span class="btn btn-orange" data-btn="restart-game">Restart</span>
+                              <span class="btn btn-blue" data-btn="new-game">Setup New Game</span>
+                         </div>
+                    </div>
+               </div>
+               
+          </div>          
+     </div>
+
+     <script src="./script.js"></script>
+</body>
+</html>
