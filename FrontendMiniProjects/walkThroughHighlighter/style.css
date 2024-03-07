@@ -1,0 +1,38 @@
+*,
+*::before,
+*::after{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: sans-serif;
+}
+
+body{
+     background-color: #ccc;
+     padding: 1.3rem;
+     text-align: center;
+}
+
+.container header, footer{
+     margin: 2rem 0;
+}
+
+.container .grid{
+     position: relative;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+     grid-gap: 0.3rem;
+}
+
+.container .grid .box{
+     position: relative;
+     background-color: aquamarine;
+     padding: 1.4rem;
+     text-align: center;
+     font-weight: bold;
+}
+
+.btn{
+     padding: 0.3rem;
+     align-self: flex-start;
+}
