@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*,
+*::before,
+*::after{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     text-decoration: none;
+}
+
+body{
+     font-family: 'Montserrat', sans-serif;
+     font-family: 'Poppins', sans-serif;
+}
+
+table, td, th{
+     border: 1px solid #000;
+}
+
+td, th{
+     padding: 1.1rem;
+}
+
+.students-data .table-container{
+     margin: 2rem 0;
+     max-width: 700px;
+     padding: 2rem 0.7rem;
+}
+
+.students-data .table-container table{
+     border-collapse: collapse;
+}
+
+.students-data .table-container table thead tr th{
+     text-transform: uppercase;
+     font-weight: 700;
+}
+
+.table-container .searchBx{
+     display: flex;
+}
+
+.table-container .searchBx input{
+     width: 100%;
+     border: 1px solid #000;
+     padding: 0.6rem 0.4rem;
+     outline: none;
+}
+
+.btn-primary{
+     background-color: aquamarine;
+     padding: 0.6rem;
+     border: 1px solid #000;
+     cursor: pointer;
+}
+
+.btn-primary:hover{
+     background-color: aqua;
+}
+
+.paginationBx {
+     width: 100%;
+     margin: 1rem 0;
+}
+
+.paginationBx .page-number{
+     padding: 0.5rem;
+     cursor: pointer;
+     border: 1px solid #000;
+}
+
+.paginationBx .page-number.active, .page-number:hover{
+     background-color: violet;
+}
