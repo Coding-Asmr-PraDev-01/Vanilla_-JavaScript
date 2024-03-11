@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+
+*,
+*::before,
+*::after{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     text-decoration: none;
+     outline: none;
+}
+
+[data-theme="dark"]{
+     color-scheme: dark;
+     --color-primary: #1e1f25;
+     --color-secondary: #fff;
+     --color-hightlight: #fb3f4a;
+     --color-line:rgba(255,255,255,0.2);
+}
+
+[data-theme="light"]{
+     color-scheme: light;
+     --color-primary: #fff;
+     --color-secondary: #1e1f25;
+     --color-hightlight: #589c5f;
+     --color-line:rgba(0,0,0,0.2);
+}
+
+html{
+     overflow-x: hidden;
+}
+
+body{
+     font-family: "Poppins", sans-serif;
+     min-width: 100vw;
+     min-height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: var(--color-secondary);
+}
+
+.line{
+     width: 100%;
+     height: 0.01rem;
+     margin-bottom: 1rem;
+     background-color: var(--color-line);
+}
+
+.btn{
+     padding: 0.4rem 1rem;
+     border-radius: 0.1rem;
+     cursor: pointer;
+     border: none;
+     outline: none;
+     background-color: var(--color-hightlight);
+}
+
+.btn-delete{
+     align-self: center;
+}
+
+.container .themeBx{
+     color: var(--color-primary);
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     margin-bottom: 0.2rem;
+}
+
+.container .themeBx select{
+     padding: 0.3rem 0.5rem;
+     font-size: 1.2rem;
+     cursor: pointer;
+}
+
+.container .dateBx{
+     background-color: var(--color-primary);
+     padding: 1rem;
+     border-radius: 0.5rem;
+     color: var(--color-secondary);
+}
+
+.container .dateBx .topBar{
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 1.2rem;
+}
+
+.container .dateBx .topBar .leftBx p{
+     font-weight: 700;
+}
+
+.container .dateBx .topBar .rightBx {
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     cursor: pointer;
+}
+
+.container .dateBx .topBar .rightBx i{
+     font-size: 0.8rem;
+}
+
+.container .wrapper {
+     display: grid;
+     width: 100%;
+     grid-gap: 0.5rem;
+     grid-template-columns: repeat(7, 1fr);
+     margin-bottom: 1.2rem;
+}
+
+.container .dateBx .bottomBar {
+     display: grid;
+     grid-template-columns: repeat(7, 1fr);
+     grid-template-rows: repeat(5, 1fr);
+     grid-gap: 1rem;
+}
+
+.container .dateBx .bottomBar span {
+     width: 30px;
+     height: 30px;
+     font-size: 0.8rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 50%;
+}
+
+.container .dateBx .bottomBar span.date{
+     font-weight: 700;
+     cursor: pointer;
+}
+
+
+/* [data-theme="light"] span:not(:first-child):nth-child(n+8){
+     color: #fff;
+} */
+
+.container .dateBx .bottomBar span.current-date{
+     background-color: var(--color-hightlight);
+     font-weight: bold;    
+     color: #fff;      
+}
+
+.container .dateBx .bottomBar span.prev-month-date{
+     color: red;
+}
+
+.container .dateBx .wrapper span.day{
+     font-weight: bold;
+     /* font-size: 0.8rem; */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.container .dateBx span.clicked{
+     background: cyan;
+     border-radius: 0;
+}
+
+.container .dateBx span.date:hover{
+     color: cyan;
+}
+
+.container .dateBx .event-container {
+     display: none;
+}
+
+.container .dateBx .event-container .timeClock{
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     margin-bottom: 1rem;
+}
+
+.container .dateBx .event-container .timeClock input{
+     padding: 0.3rem;
+} 
+
+.container .dateBx .event-container .event-heading{
+     font-size: 0.8rem;
+     margin-bottom: 0.4rem;
+}
+
+.container .dateBx .event-container .events-list{
+     display: flex;
+     flex-direction: column;
+     gap: 0.7rem;
+}
+
+.container .dateBx .event-container .events-list .wrapper-div{
+     display: flex;
+     justify-content: space-between;
+}
+
+.container .dateBx .event-container .events-list .event-item .event-time{
+     font-size: 0.7rem;
+}
+
+.container .dateBx .event-container .events-list .event-item .event-task{
+     font-size: 0.9rem;
+}
