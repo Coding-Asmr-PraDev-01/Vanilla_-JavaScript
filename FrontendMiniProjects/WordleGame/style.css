@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500;600;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+:root {
+     --input-box-clr: #3a3a3c;
+     --correct-letter-clr: #538d4e;
+     --wrong-position-clr: #c9b458;
+     --body-bg-clr: #222;
+     --text-clr: #fff;
+}
+
+body {
+     position: relative;
+     min-width: 100vw;
+     min-height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: var(--body-bg-clr);
+}
+
+body.overlay {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.9);
+}
+
+body.light {
+     --input-box-clr: #b8b5b5;
+     --correct-letter-clr: #538d4e;
+     --wrong-position-clr: #c9b458;
+     --body-bg-clr: #fff;
+     --text-clr: #000;
+}
+
+html {
+     font-family: "Montserrat", sans-serif;
+}
+
+.main-subheading {
+     font-size: 2.2rem;
+     color: var(--text-clr);
+}
+
+.container {
+     display: flex;
+     gap: 1.3rem;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+}
+
+.container .topBar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     gap: 1.3rem;
+     /* background-color: red; */
+}
+
+.fa-circle-question {
+     font-size: 1.8rem;
+     cursor: pointer;
+     color: rgba(255, 255, 255, 0.4);
+}
+
+body.light .fa-circle-question {
+     color: rgba(0, 0, 0, 0.4);
+}
+
+.fa-circle-question:hover {
+     color: var(--text-clr);
+}
+
+.gridContainer {
+     width: 400px;
+     height: 100%;
+     display: grid;
+     grid-gap: 0.4rem;
+     /* grid-template-columns: repeat(5, 1fr); */
+}
+
+.gridContainer .grid-item {
+     display: flex;
+     gap: 0.4rem;
+     height: 60px;
+}
+
+.box {
+     width: 100%;
+     height: 100%;
+}
+
+.box input {
+     width: 100%;
+     height: 100%;
+     text-align: center;
+     font-size: 2rem;
+     text-transform: uppercase;
+     font-weight: 700;
+     background-color: transparent;
+     color: var(--text-clr);
+     border: 3px solid var(--input-box-clr);
+     transition: 0.5s ease-in-out;
+}
+
+body.light .box input.correct-letter {
+     color: #fff;
+}
+
+body.light .box input.wrong-position {
+     color: #fff;
+}
+
+.box input.correct-letter {
+     background: var(--correct-letter-clr);
+}
+
+.box input.wrong-position {
+     background: var(--wrong-position-clr);
+}
+
+.box input.wrong-letter {
+     background-color: var(--input-box-clr);
+}
+
+.modal-container {
+     position: absolute;
+     transform: scaleY(0);
+     background-color: var(--body-bg-clr);
+     max-width: 500px;
+     padding: 1.4rem 2rem;
+     color: var(--text-clr);
+     border: 3px solid var(--input-box-clr);
+     transition: 0.34s ease-in;
+}
+
+.close-modal-btn {
+     position: absolute;
+     top: 1.1rem;
+     right: 1rem;
+     font-weight: 800;
+     cursor: pointer;
+     width: 30px;
+     height: 30px;
+     background-color: var(--wrong-position-clr);
+     border: 3px solid var(--input-box-clr);
+     padding: 1rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.close-modal-btn:hover {
+     background-color: red;
+}
+
+.modal-container .modal .modal-body {
+     display: flex;
+     flex-direction: column;
+     gap: 0.6rem;
+}
+
+.modal-container .modal .modal-body .exampleBx .example .words {
+     display: flex;
+     /* gap: 1.52rem; */
+     justify-content: space-evenly;
+     align-self: flex-start;
+     padding: 0.4rem 0;
+}
+
+.modal-container .modal .modal-body .exampleBx .example>p {
+     margin-top: 0.4rem;
+}
+
+.modal-container .modal .modal-body .exampleBx .example .words .box .box-input {
+     width: 45px;
+     font-size: 1rem;
+     padding: 0.5rem 0.2rem;
+}
+
+.modal-container .modal .modal-body .exampleBx .example p {
+     margin-bottom: 1.2rem;
+}
+
+.modal-container .modal .modal-body .instructionsBx {
+     margin: 0.7rem 0;
+}
+
+.modal-container .modal .modal-body .instructionsBx p {
+     font-size: 0.8rem;
+     line-height: 1.2rem;
+}
+
+.gameResultBx {
+     position: absolute;
+     width: 400px;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     padding: 1.34rem;
+     border: 3px solid var(--input-box-clr);
+     background-color: var(--body-bg-clr);
+     opacity: 0;
+     transition: 0.4s ease-in-out;
+     color: #fff;
+}
+
+.gameResultBx .result-title {
+     margin-top: 2rem;
+}
+
+.gameResultBx .play-again-btn {
+     padding: 0.6rem 2rem;
+     background-color: var(--correct-letter-clr);
+     border: 3px solid var(--input-box-clr);
+     color: var(--text-clr);
+     font-weight: 700;
+     cursor: pointer;
+     margin-top: 0.4rem;
+}
+
+/* Light Dark theme toggler */
+.checkbox {
+     opacity: 0;
+     position: absolute;
+}
+
+.checkbox-label {
+     background-color: #111;
+     width: 50px;
+     height: 26px;
+     border-radius: 50px;
+     position: relative;
+     padding: 5px;
+     cursor: pointer;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.fa-moon {
+     color: #f1c40f;
+}
+
+.fa-sun {
+     color: #f39c12;
+}
+
+.checkbox-label .ball {
+     background-color: #fff;
+     width: 22px;
+     height: 22px;
+     position: absolute;
+     left: 2px;
+     top: 2px;
+     border-radius: 50%;
+     transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.checkbox-label .ball {
+     transform: translateX(24px);
+}
