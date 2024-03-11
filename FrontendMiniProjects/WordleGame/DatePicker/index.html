@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Date Sytem</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="./style.css">
+</head>
+
+<body data-theme="dark">
+     <div class="container">
+          <div class="themeBx">
+               <label for="theme-options">Choose Theme</label>
+               <select name="theme-options" class="theme-options" id="">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+               </select>
+          </div>
+          <div class="dateBx">
+               <div class="topBar">
+                    <div class="leftBx">
+                         <p><span class="month"></span> <span class="year">2020</span></p>
+                    </div>
+                    <div class="rightBx">
+                         <i class="fa-solid fa-chevron-left"></i>
+                         <i class="fa-solid fa-chevron-right"></i>
+                    </div>
+               </div>
+               <div class="wrapper">
+                    <span class="day"></span>
+                    <span class="day"></span>
+                    <span class="day"></span>
+                    <span class="day"></span>
+                    <span class="day"></span>
+                    <span class="day"></span>
+                    <span class="day"></span>
+               </div>
+               <div class="bottomBar">
+                    <!-- It will dynamically Added here -->
+               </div>
+               <div class="event-container">
+                    <div class="line"></div>
+                    <p class="event-heading">sldkjflsdkfjdsk</p>
+                    <div class="timeClock">
+                         <div class="inputBx">
+                              <input type="time" class="event-input-time" value="12:00"> &nbsp;
+                              <input type="text" class="event-input-text" placeholder="Enter a event" class="event-text" />
+                         </div>
+                         <div class="btnBx">
+                              <button class="btn add-btn">Add</button>
+                         </div>
+                    </div>
+                    <div class="line"></div>
+
+                    <div class="events-list">
+                         <div class="event-item">
+                              <p class="event-time">1:09AM</p>
+                              <h3 class="event-task">Take wife for a walk</h3>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+
+     <script src="./script.js"></script>
+</body>
+
+</html>
